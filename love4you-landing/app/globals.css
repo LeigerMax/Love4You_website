@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+body {
+  background-color: #05010a;
+}
+
+@layer base {
+  :root {
+    --l4y-bg-0: #05010a;
+    --l4y-bg-1: #07031a;
+    --l4y-glass: rgba(255, 255, 255, 0.06);
+    --l4y-border: rgba(255, 255, 255, 0.1);
+    --l4y-text: rgba(255, 255, 255, 0.92);
+    --l4y-muted: rgba(255, 255, 255, 0.68);
+  }
+}
+
+@layer utilities {
+  .l4y-glass {
+    background: var(--l4y-glass);
+    border: 1px solid var(--l4y-border);
+    backdrop-filter: blur(10px);
+  }
+  
+  @keyframes star-twinkle {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 0.3; }
+  }
+
+  .animate-star-twinkle {
+    animation: star-twinkle 2s infinite ease-in-out;
+  }
+}
