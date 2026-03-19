@@ -5,12 +5,18 @@ import Script from 'next/script';
 
 export default function CookieBanner() {
   const [showBanner, setShowBanner] = useState(false);
-  const [consentGiven, setConsentGiven] = useState(false);
 
   useEffect(() => {
     const consent = localStorage.getItem('cookieConsent');
     if (consent === 'accepted') {
-      setConsentGiven(true);
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('consent', 'update', {
+          'analytics_storage': 'granted',
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted'
+        });
+      }
     } else if (!consent) {
       setShowBanner(true);
     }
@@ -18,8 +24,15 @@ export default function CookieBanner() {
 
   const handleAccept = () => {
     localStorage.setItem('cookieConsent', 'accepted');
-    setConsentGiven(true);
     setShowBanner(false);
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('consent', 'update', {
+        'analytics_storage': 'granted',
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted'
+      });
+    }
   };
 
   const handleDecline = () => {
@@ -29,22 +42,26 @@ export default function CookieBanner() {
 
   return (
     <>
-      {consentGiven && (
-        <>
-          <Script
-            src="https://www.googletagmanager.com/gtag/js?id=G-J6DT49C14N"
-            strategy="afterInteractive"
-          />
-          <Script id="google-analytics" strategy="afterInteractive">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-J6DT49C14N');
-            `}
-          </Script>
-        </>
-      )}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-J6DT49C14N"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          
+          gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+          });
+          
+          gtag('js', new Date());
+          gtag('config', 'G-J6DT49C14N');
+        `}
+      </Script>
 
       <AnimatePresence>
         {showBanner && (
