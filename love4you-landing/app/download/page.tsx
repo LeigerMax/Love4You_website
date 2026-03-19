@@ -90,7 +90,7 @@ export default function DownloadPage() {
                 </p>
 
                 <a
-                  href="https://github.com/LeigerMax/Love4You-Flutter/releases/latest"
+                  href="/api/download-apk"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full border-2 border-white/20 text-gray-300 font-bold py-4 px-6 rounded-2xl hover:bg-white/10 transition-colors flex items-center justify-center gap-2 mb-4"
