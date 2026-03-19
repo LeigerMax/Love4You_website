@@ -20,7 +20,7 @@ export default function SiteFooter() {
         <div className="flex gap-8">
           <a href="/terms" className="hover:text-white transition">CGU</a>
           <a href="/privacy" className="hover:text-white transition">Confidentialité</a>
-          <a href="#" className="hover:text-white transition">Contact</a>
+          <a href="/contact" className="hover:text-white transition">Contact</a>
         </div>
         <p className="text-sm">© 2026 Love4You. Fait avec ❤️ pour les couples.</p>
       </div>

@@ -1,9 +1,9 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Smartphone } from 'lucide-react';
+import { Smartphone, Download } from 'lucide-react';
 import { appScreenshots } from '../config/screenshots';
-import { downloadLinks, StoreLink } from '../config/download-links';
+import Link from 'next/link';
 
 
 export default function ScreenshotsPage() {
@@ -20,9 +20,9 @@ export default function ScreenshotsPage() {
               animate={{ opacity: 1, y: 0 }}
               className="mb-20"
             >
-              <h1 className="text-4xl md:text-6xl font-black mb-6 italic uppercase text-gray-900 leading-tight">
+              <h2 className="text-4xl md:text-6xl font-black mb-6 italic uppercase text-gray-900 leading-tight">
                 L'interface de <br/><span className="text-purple-600">votre complicité</span>
-              </h1>
+              </h2>
               <p className="text-xl text-gray-500 max-w-2xl mx-auto font-light">
                 Une application pensée pour être intuitive, élégante et totalement privée. 
                 Découvrez l'univers de Love4You.
@@ -87,28 +87,18 @@ export default function ScreenshotsPage() {
                   <Smartphone className="mx-auto mb-6 opacity-50" size={48} />
                   <h3 className="text-3xl font-bold mb-4 uppercase italic">Vivez l'expérience complète</h3>
                   <p className="mb-8 opacity-70">Téléchargez l'application gratuitement et commencez à jouer.</p>
-                  <div className="flex flex-col items-center justify-center gap-4">
-                  {downloadLinks
-                    .filter((store: StoreLink) => store.isActive)
-                    .map((store: StoreLink, index: number) => (
-                      <a
-                        key={store.id}
-                        href={store.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`${store.color} text-white p-5 rounded-3xl flex items-center gap-5 hover:scale-[1.02] transition-transform shadow-xl group w-full max-w-md`}
-                      >
-                        <div className="bg-white/20 p-3 rounded-2xl group-hover:rotate-6 transition-transform">
-                          {React.createElement(store.icon, { size: 32 })}
-                        </div>
-                        <div className="text-left">
-                          <p className="text-xs opacity-80 uppercase tracking-widest font-bold">Disponible sur</p>
-                          <p className="text-2xl font-bold leading-tight">{store.name}</p>
-                          <p className="text-[10px] opacity-60 mt-1 uppercase">{store.description}</p>
-                        </div>
-                      </a>
-                    ))}
-                </div>
+                  <div className="flex flex-col items-center justify-center mt-2">
+                    <Link
+                      href="/#download"
+                      className="ring-4 ring-pink-500 bg-gradient-to-r from-pink-500 to-fuchsia-500 text-white font-bold text-xl py-4 px-8 rounded-full shadow-xl shadow-pink-500/30 hover:scale-105 transition active:scale-95 inline-flex items-center gap-2 mb-2"
+                    >
+                      <Download size={24} />
+                      <span>Télécharger l'APK Android</span>
+                    </Link>
+                    <span className="text-pink-500 font-semibold text-sm mt-3 text-center">
+                      L'app est en phase Alpha – testez gratuitement !
+                    </span>
+                  </div>
               </div>
               {/* Décoration de fond */}
               <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-500/20 to-pink-500/20"></div>

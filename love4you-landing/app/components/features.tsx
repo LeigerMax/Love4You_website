@@ -13,49 +13,49 @@ const features = [
   {
     title: "Fantasmes Couple",
     desc: "Explorez vos envies mutuelles via QR Code. Seuls les matchs s'affichent pour briser la glace sans pression et sans tabou.",
-    icon: <Heart className="text-pink-500" />,
+    icon: <Heart className="text-pink-500" aria-hidden="true" />,
     color: "bg-pink-50"
   },
   {
     title: "Actions Quotidiennes",
     desc: "Un nouveau défi chaque jour parmi 9 catégories (Romantique, Sensoriel, Intense...). Maintenez la flamme au quotidien.",
-    icon: <Zap className="text-purple-500" />,
+    icon: <Zap className="text-purple-500" aria-hidden="true" />,
     color: "bg-purple-50"
   },
   {
     title: "Sexy Dice",
     desc: "Laissez le hasard décider avec des dés combinables : une action, une partie du corps et une position pour des moments imprévus.",
-    icon: <Dice5 className="text-orange-500" />,
+    icon: <Dice5 className="text-orange-500" aria-hidden="true" />,
     color: "bg-orange-50"
   },
   {
     title: "Jeu de Rôle",
     desc: "Incarnez des personnages (Inconnu au bar, Professeur...) à travers des scénarios immersifs guidés étape par étape.",
-    icon: <Sparkles className="text-indigo-500" />,
+    icon: <Sparkles className="text-indigo-500" aria-hidden="true" />,
     color: "bg-indigo-50"
   },
   {
     title: "Quiz d'Amour",
     desc: "Testez votre connaissance mutuelle sur des thèmes variés : souvenirs, préférences, sexualité et vie quotidienne.",
-    icon: <HelpCircle className="text-blue-500" />,
+    icon: <HelpCircle className="text-blue-500" aria-hidden="true" />,
     color: "bg-blue-50"
   },
   {
     title: "Cartes à Gratter",
     desc: "Découvrez des surprises cachées derrière des grilles thématiques (Global, Anal, 69, Cunnilingus...) pour pimenter vos soirées.",
-    icon: <Layers className="text-amber-500" />,
+    icon: <Layers className="text-amber-500" aria-hidden="true" />,
     color: "bg-amber-50"
   },
   {
     title: "Synchronisation QR",
     desc: "Pas de compte, pas de serveur. Échangez vos données de manière ultra-sécurisée et privée via un simple scan de QR Code.",
-    icon: <QrCode className="text-emerald-500" />,
+    icon: <QrCode className="text-emerald-500" aria-hidden="true" />,
     color: "bg-emerald-50"
   },
   {
     title: "Stats & Succès",
     desc: "Gamifiez votre relation ! Suivez vos séries (streaks), débloquez des trophées et visualisez votre progression commune.",
-    icon: <Trophy className="text-rose-500" />,
+    icon: <Trophy className="text-rose-500" aria-hidden="true" />,
     color: "bg-rose-50"
   }
 ];
@@ -65,7 +65,7 @@ export default function Features() {
     <section id="features" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-sm font-bold tracking-widest text-purple-600 uppercase mb-4">L'expérience ultime</h2>
+          <span className="block text-sm font-bold tracking-widest text-purple-600 uppercase mb-4">L'expérience ultime</span>
           <h2 className="text-4xl md:text-5xl font-black mb-6 italic uppercase text-gray-900">
             Brisez la routine,<br className="hidden md:block" /> explorez de nouveaux horizons
           </h2>
