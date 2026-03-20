@@ -1,13 +1,71 @@
 "use client";
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Apple, Play, Download } from 'lucide-react';
 
 
 export default function Hero() {
+  const [clickCount, setClickCount] = useState(0);
+  const [showHearts, setShowHearts] = useState(false);
+  const [hearts, setHearts] = useState<Array<{ id: number; left: number; size: number; delay: number; duration: number }>>([]);
+
+  useEffect(() => {
+    if (showHearts) {
+      const newHearts = Array.from({ length: 50 }).map((_, i) => ({
+        id: i,
+        left: Math.random() * 100,
+        size: Math.random() * 24 + 16, // 16px to 40px
+        delay: Math.random() * 0.5, // 0 to 0.5s stagger
+        duration: Math.random() * 2 + 2.5, // 2.5s to 4.5s fall
+      }));
+      setHearts(newHearts);
+      
+      const timer = setTimeout(() => {
+        setShowHearts(false);
+      }, 5000);
+      return () => clearTimeout(timer);
+    } else {
+      setHearts([]);
+    }
+  }, [showHearts]);
+
+  const handlePhoneClick = () => {
+    if (showHearts) return;
+    const newCount = clickCount + 1;
+    setClickCount(newCount);
+    if (newCount >= 5) {
+      setShowHearts(true);
+      setClickCount(0);
+    }
+  };
+
   return (
     <section className="relative pt-32 pb-20 min-h-screen overflow-hidden bg-white dark:bg-transparent transition-colors duration-300">
+      
+      {/* Easter Egg Falling Hearts */}
+      {showHearts && (
+        <div className="fixed inset-0 z-[100] pointer-events-none overflow-hidden">
+          {hearts.map(heart => (
+            <motion.div
+              key={heart.id}
+              initial={{ y: -100, x: `${heart.left}vw`, opacity: 0, rotate: 0 }}
+              animate={{ y: '110vh', opacity: [0, 1, 1, 0], rotate: 360 }}
+              transition={{ 
+                duration: heart.duration, 
+                delay: heart.delay, 
+                ease: "easeIn"
+              }}
+              className="absolute top-0 text-pink-500 will-change-transform"
+              style={{ fontSize: `${heart.size}px`, left: 0 }}
+            >
+              ❤️
+            </motion.div>
+          ))}
+        </div>
+      )}
+
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -32,7 +90,13 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           className="md:w-1/2 mt-12 md:mt-0 relative flex justify-center"
         >
-          <div className="relative w-64 h-[520px] bg-gray-900 dark:bg-black rounded-[3rem] border-[8px] border-gray-900 dark:border-gray-800 shadow-2xl overflow-hidden flex flex-col items-center justify-center transition-colors duration-300">
+          <div 
+            className="relative w-64 h-[520px] bg-gray-900 dark:bg-black rounded-[3rem] border-[8px] border-gray-900 dark:border-gray-800 shadow-2xl overflow-hidden flex flex-col items-center justify-center transition-colors duration-300 cursor-pointer select-none"
+            onClick={handlePhoneClick}
+            role="button"
+            tabIndex={0}
+            aria-label="Easter egg: Appuyez 5 fois pour une surprise"
+          >
             {/* Design custom dans le mockup */}
             <div className="absolute inset-0 bg-gradient-to-b from-indigo-900 via-purple-800 to-pink-900" />
             <div className="relative z-10 flex flex-col items-center justify-center h-full">

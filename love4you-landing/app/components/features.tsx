@@ -6,7 +6,7 @@ import {
   HelpCircle, 
   Layers, 
   QrCode, 
-  Trophy 
+  Gift 
 } from 'lucide-react';
 
 const features = [
@@ -53,9 +53,9 @@ const features = [
     color: "bg-emerald-50 dark:bg-emerald-900/20"
   },
   {
-    title: "Stats & Succès",
-    desc: "Gamifiez votre relation ! Suivez vos séries (streaks), débloquez des trophées et visualisez votre progression commune.",
-    icon: <Trophy className="text-rose-500" aria-hidden="true" />,
+    title: "Niveaux & Bons d'Amour",
+    desc: "Gagnez des niveaux ensemble et débloquez d'incroyables récompenses à utiliser avec votre partenaire (ex: massages gratuits, surprises...).",
+    icon: <Gift className="text-rose-500" aria-hidden="true" />,
     color: "bg-rose-50 dark:bg-rose-900/20"
   }
 ];

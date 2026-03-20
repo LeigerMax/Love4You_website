@@ -26,5 +26,12 @@ export const appScreenshots = [
     description: 'Prenez une grille et grattez pour découvrir une position à réaliser.',
     image: 'screenshots/scratch.png',
     color: 'from-blue-500 to-cyan-500'
+  },
+  {
+    id: 'dice',
+    title: 'Sexy Dice',
+    description: 'Laissez le hasard décider avec 3 types de dé : Action + Partie du corps, Préliminaire et Kamasutra.',
+    image: 'screenshots/dice.png',
+    color: 'from-fuchsia-500 to-pink-500'
   }
 ];

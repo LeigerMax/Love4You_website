@@ -46,7 +46,7 @@ export default function RootLayout({
       <head>
       </head>
       <body className="min-h-screen antialiased bg-gray-50 dark:bg-[#05010a] text-gray-900 dark:text-gray-100 transition-colors duration-300">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark">
           <StarsBackground />
           <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-purple-600 focus:font-bold focus:shadow-xl focus:rounded-br-xl">
           Passer au contenu principal
