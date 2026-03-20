@@ -30,14 +30,14 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-24 bg-gray-50">
+    <section id="faq" className="py-24 bg-gray-50 dark:bg-transparent transition-colors duration-300">
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-sm font-bold tracking-widest text-purple-600 uppercase mb-4">Questions Fréquentes</h2>
-          <h3 className="text-4xl md:text-5xl font-black mb-6 italic uppercase text-gray-900">
+          <h3 className="text-4xl md:text-5xl font-black mb-6 italic uppercase text-gray-900 dark:text-white transition-colors duration-300">
             Une question ?<br className="hidden md:block" /> On y répond
           </h3>
-          <p className="text-gray-500 text-lg font-light">
+          <p className="text-gray-500 dark:text-gray-400 text-lg font-light transition-colors duration-300">
             Tout ce que vous devez savoir avant de pimenter votre relation.
           </p>
         </div>
@@ -46,17 +46,17 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <div 
               key={index} 
-              className="bg-white border border-gray-100 rounded-[2rem] overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+              className="bg-white dark:bg-gray-900/50 border border-gray-100 dark:border-white/10 rounded-[2rem] overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
             >
               <button
                 onClick={() => toggleFAQ(index)}
                 className="w-full flex items-center justify-between p-6 md:p-8 text-left focus:outline-none"
               >
-                <span className="font-bold text-lg text-gray-900 pr-8">{faq.q}</span>
+                <span className="font-bold text-lg text-gray-900 dark:text-gray-100 pr-8 transition-colors duration-300">{faq.q}</span>
                 <motion.div
                   animate={{ rotate: openIndex === index ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-purple-100 p-2 rounded-full shrink-0 text-purple-600"
+                  className="bg-purple-100 dark:bg-purple-900/40 p-2 rounded-full shrink-0 text-purple-600 dark:text-purple-400 transition-colors duration-300"
                 >
                   <ChevronDown size={20} />
                 </motion.div>
@@ -70,7 +70,7 @@ export default function FAQ() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="px-6 md:px-8 pb-6 md:pb-8 text-gray-600 leading-relaxed font-medium">
+                    <div className="px-6 md:px-8 pb-6 md:pb-8 text-gray-600 dark:text-gray-300 leading-relaxed font-medium transition-colors duration-300">
                       {faq.a}
                     </div>
                   </motion.div>

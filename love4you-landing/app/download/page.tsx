@@ -29,10 +29,10 @@ export default function DownloadPage() {
 
   return (
     <section id="download" className="bg-gradient-to-br from-indigo-900 to-purple-900 text-white overflow-hidden relative">
-      <AgeVerificationModal 
-        isOpen={showAgeModal} 
-        onConfirm={executeDownload} 
-        onDecline={() => setShowAgeModal(false)} 
+      <AgeVerificationModal
+        isOpen={showAgeModal}
+        onConfirm={executeDownload}
+        onDecline={() => setShowAgeModal(false)}
       />
 
       <main className="pt-32 pb-32 px-6 relative z-10">
@@ -85,6 +85,10 @@ export default function DownloadPage() {
                   <li className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-pink-500"></span>
                     Installation sécurisée et suivie
+                  </li>
+                  <li className="flex items-center gap-2 text-red-400 font-bold">
+                    <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+                    Nombre de testeurs limité !
                   </li>
                 </ul>
 

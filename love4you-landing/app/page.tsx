@@ -10,7 +10,7 @@ import FAQ from "./components/FAQ";
 
 export default function Home() {
   return (
-    <main id="main-content" className="min-h-screen bg-gray-50">
+    <main id="main-content" className="min-h-screen">
       <Navbar />
       <Hero />
       <DownloadPage />

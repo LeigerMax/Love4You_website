@@ -6,6 +6,8 @@ import "./globals.css";
 import MotionProvider from "./components/MotionProvider";
 import CookieBanner from "./components/CookieBanner";
 import ScrollToTop from "./components/ScrollToTop";
+import ThemeProvider from "./components/ThemeProvider";
+import StarsBackground from "./components/StarsBackground";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://love4you.app'),
@@ -40,18 +42,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className="scroll-smooth font-[Poppins] bg-gray-50 text-gray-900">
+    <html lang="fr" suppressHydrationWarning className="scroll-smooth font-[Poppins] bg-gray-50 dark:bg-[#05010a] text-gray-900 dark:text-gray-100">
       <head>
       </head>
-      <body className="min-h-screen antialiased bg-gray-50 text-gray-900">
-        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-purple-600 focus:font-bold focus:shadow-xl focus:rounded-br-xl">
+      <body className="min-h-screen antialiased bg-gray-50 dark:bg-[#05010a] text-gray-900 dark:text-gray-100 transition-colors duration-300">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <StarsBackground />
+          <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-purple-600 focus:font-bold focus:shadow-xl focus:rounded-br-xl">
           Passer au contenu principal
         </a>
-        <MotionProvider>
-          {children}
-        </MotionProvider>
-        <CookieBanner />
-        <ScrollToTop />
+          <MotionProvider>
+            {children}
+          </MotionProvider>
+          <CookieBanner />
+          <ScrollToTop />
+        </ThemeProvider>
       </body>
     </html>
   );

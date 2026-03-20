@@ -7,29 +7,22 @@ import { Apple, Play, Download } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section className="relative pt-32 pb-20 min-h-screen overflow-hidden bg-white">
+    <section className="relative pt-32 pb-20 min-h-screen overflow-hidden bg-white dark:bg-transparent transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           className="md:w-1/2 text-center md:text-left z-10"
         >
-          <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6 text-gray-900">
+          <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6 text-gray-900 dark:text-white transition-colors duration-300">
             Plus qu'une app,<br /><span className="text-purple-600">une aventure</span> à deux.
           </h1>
-          <p className="text-lg text-gray-600 mb-8 max-w-lg">
+          <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-lg transition-colors duration-300">
             Sortez de la routine, explorez vos fantasmes et renforcez votre complicité avec l'application de jeux la plus complète pour les couples.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <div className="flex flex-col items-center w-full sm:w-auto">
-              <Link 
-                href="/#download"
-                className="w-full sm:w-auto ring-4 ring-pink-500 bg-gradient-to-r from-pink-500 to-fuchsia-500 text-white font-bold text-xl py-5 px-8 rounded-full shadow-[0_0_24px_rgba(236,72,153,0.4)] hover:scale-105 transition active:scale-95 inline-flex items-center justify-center gap-3 mb-2"
-              >
-                <Download size={24} />
-                <span>Télécharger l'APK Android</span>
-              </Link>
-              <span className="text-pink-600 font-semibold text-sm mt-2">L'app est en phase Alpha – testez gratuitement !</span>
+              <span className="text-pink-600 dark:text-pink-400 font-semibold text-lg transition-colors duration-300">L'app est en phase Alpha – testez gratuitement sur android !</span>
             </div>
           </div>
         </motion.div>
@@ -39,7 +32,7 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           className="md:w-1/2 mt-12 md:mt-0 relative flex justify-center"
         >
-          <div className="relative w-64 h-[520px] bg-gray-900 rounded-[3rem] border-[8px] border-gray-900 shadow-2xl overflow-hidden flex flex-col items-center justify-center">
+          <div className="relative w-64 h-[520px] bg-gray-900 dark:bg-black rounded-[3rem] border-[8px] border-gray-900 dark:border-gray-800 shadow-2xl overflow-hidden flex flex-col items-center justify-center transition-colors duration-300">
             {/* Design custom dans le mockup */}
             <div className="absolute inset-0 bg-gradient-to-b from-indigo-900 via-purple-800 to-pink-900" />
             <div className="relative z-10 flex flex-col items-center justify-center h-full">
