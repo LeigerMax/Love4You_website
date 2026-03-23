@@ -5,16 +5,16 @@ import ThemeToggle from './ThemeToggle';
 export default function Navbar() {
   return (
     <nav className="fixed w-full z-50 bg-white/80 dark:bg-[#07031a]/80 backdrop-blur-md border-b border-gray-100 dark:border-white/10 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
+        <Link href="/" className="flex items-center gap-2 sm:gap-3">
           <Image
             src="/icon.png"
             alt="Logo Love4You"
             width={80}
             height={80}
-            className="mx-auto drop-shadow-xl"
+            className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 mx-auto drop-shadow-xl"
           />
-          <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-pink-600">
+          <span className="text-xl sm:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-pink-600">
             Love4You
           </span>
         </Link>
@@ -24,9 +24,9 @@ export default function Navbar() {
           <Link href="/#privacy" className="hover:text-purple-600 dark:hover:text-purple-400 transition">Confidentialité</Link>
           <Link href="/contact" className="hover:text-purple-600 dark:hover:text-purple-400 transition">Contact</Link>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           <ThemeToggle />
-          <Link href="/#download" className="bg-purple-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-purple-700 transition shadow-md">
+          <Link href="/#download" className="bg-purple-600 text-white px-4 sm:px-6 py-1.5 sm:py-2 rounded-full text-sm sm:text-base font-semibold hover:bg-purple-700 transition shadow-md">
             Télécharger
           </Link>
         </div>
