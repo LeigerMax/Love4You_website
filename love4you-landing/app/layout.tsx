@@ -22,11 +22,20 @@ export const metadata: Metadata = {
     siteName: "Love4You",
     locale: "fr_FR",
     type: "website",
+    images: [
+      {
+        url: "/icon.png",
+        width: 1024,
+        height: 1024,
+        alt: "Love4You App Logo",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Love4You – Jeux pour couples",
     description: "La meilleure application de jeux sexy, défis et fantasmes pour pimenter votre couple.",
+    images: ["/icon.png"],
   },
   alternates: {
     canonical: '/',
