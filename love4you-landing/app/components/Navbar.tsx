@@ -22,6 +22,7 @@ export default function Navbar() {
         <div className="hidden md:flex gap-8 font-medium text-gray-600 dark:text-gray-300">
           <Link href="/#features" className="hover:text-purple-600 dark:hover:text-purple-400 transition">Jeux</Link>
           <Link href="/#screenshots" className="hover:text-purple-600 dark:hover:text-purple-400 transition">Aperçu</Link>
+          <Link href="/changelog" className="hover:text-purple-600 dark:hover:text-purple-400 transition">Changelog</Link>
           <Link href="/#privacy" className="hover:text-purple-600 dark:hover:text-purple-400 transition">Confidentialité</Link>
           <Link href="/contact" className="hover:text-purple-600 dark:hover:text-purple-400 transition">Contact</Link>
         </div>

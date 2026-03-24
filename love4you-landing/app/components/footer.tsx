@@ -21,6 +21,7 @@ export default function SiteFooter() {
           <div className="flex gap-8">
             <a href="/terms" className="hover:text-white transition">CGU</a>
             <a href="/privacy" className="hover:text-white transition">Confidentialité</a>
+            <a href="/changelog" className="hover:text-white transition">Changelog</a>
             <a href="/contact" className="hover:text-white transition">Contact</a>
           </div>
           <div className="flex flex-wrap justify-center md:justify-start gap-6 text-sm mt-2">
