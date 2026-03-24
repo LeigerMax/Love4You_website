@@ -44,13 +44,51 @@ const changelogData: VersionData[] = [
         category: 'Prochainement sur Love4You',
         icon: MapPin,
         items: [
-          'Rework module roleplay',
-          'Rework module profil avec des avatars',
-          'Rework module love quiz avec nouveau workflow',
           "Ajout d'events spéciaux",
           'Nouveau scénario, défis, position de kamasutra, etc.',
           "Ajout d'un jeu de plateau",
           "Calendrier de l'avent",
+        ],
+      },
+    ],
+  },
+  {
+    version: 'v0.4.0 (24-03-2026)',
+    changes: [
+      {
+        category: 'Nouveautés majeures',
+        icon: Rocket,
+        items: [
+          "Le Grand Retour du Roleplay : Le module fait son grand retour avec un catalogue de scénarios enrichi et une interface totalement repensée pour plus d'immersion.",
+          "Optimisation iOS Web : Amélioration significative de l'expérience sur navigateur iOS. Le module Big Daily est désormais pleinement compatible et fluide pour les utilisateurs sur iPhone et iPad.",
+          "Nouveau Design System \"Intimate\" : L'interface est plus douce, sans lignes de séparation, pour une navigation apaisante.",
+          "Aide intégrée (Bouton Info) : Un nouveau bouton d'information est disponible dans chaque module pour vous expliquer les règles du jeu en un clin d'œil.",
+          "Multi-Profils & Couples : Vos résultats sont désormais sauvegardés par couple. Jouer avec un nouveau partenaire ne risque plus d'écraser vos précédents scores !"
+        ],
+      },
+      {
+        category: 'Évolution du Roleplay',
+        icon: Palette,
+        items: [
+          "Configuration simplifiée : Sélection des rôles réinventée avec de grands avatars interactifs.",
+          "Interface épurée : Suppression des éléments visuels superflus sur les fiches scénarios pour se concentrer sur l'essentiel."
+        ],
+      },
+      {
+        category: 'Profil & Succès',
+        icon: Star,
+        items: [
+          "Nouveaux Trophées : Le succès \"Profil complété\" évolue en deux badges distincts : \"Profil créé\" et \"En couple\".",
+          "Progression : Correction du système de déblocage pour garantir que vos trophées s'affichent instantanément."
+        ],
+      },
+      {
+        category: 'Love Quiz & Expérience',
+        icon: Wrench,
+        items: [
+          "Love Quiz : Interface modernisée avec des icônes natives et des dégradés dynamiques lors de vos réponses.",
+          "Enchaînement fluide : L'application propose désormais automatiquement au deuxième partenaire de prendre la main à la fin d'un quiz.",
+          "Correctifs : Suppression des bugs d'affichage (textes coupés ou boutons inaccessibles) sur les petits écrans."
         ],
       },
     ],
@@ -186,17 +224,17 @@ export default function ChangelogPage() {
   return (
     <main id="main-content" className="min-h-screen bg-gray-50 dark:bg-[#05010a]">
       <Navbar />
-      
+
       <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <div className="text-center mb-16">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-pink-600 mb-4"
           >
             Changelog & Roadmap
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
@@ -208,7 +246,7 @@ export default function ChangelogPage() {
 
         <div className="relative border-l-2 border-indigo-100 dark:border-indigo-900/40 ml-4 md:ml-8">
           {changelogData.map((release, index) => (
-            <motion.div 
+            <motion.div
               key={release.version}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -218,7 +256,7 @@ export default function ChangelogPage() {
             >
               {/* Timeline dot */}
               <div className={`absolute -left-[11px] top-1 h-5 w-5 rounded-full border-4 border-white dark:border-[#05010a] shadow-sm ${release.isRoadmap ? 'bg-pink-500' : 'bg-indigo-500'}`} />
-              
+
               <div className="flex flex-col mb-6">
                 <h2 className={`text-2xl md:text-3xl font-bold ${release.isRoadmap ? 'bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-rose-500' : 'text-gray-900 dark:text-white'}`}>
                   {release.version}
@@ -254,7 +292,7 @@ export default function ChangelogPage() {
           ))}
         </div>
       </div>
-      
+
       <Footer />
     </main>
   );
