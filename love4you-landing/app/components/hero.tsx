@@ -108,9 +108,10 @@ export default function Hero() {
               >
                 <Image
                   src="/icon.png"
-                  alt="Logo Love4You"
+                  alt="Love4You - Jeux coquins et défis pour couple"
                   width={80}
                   height={80}
+                  priority
                   className="mx-auto drop-shadow-xl"
                 />
               </motion.div>

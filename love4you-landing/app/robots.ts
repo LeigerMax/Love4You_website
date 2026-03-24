@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://love4you.app'
+  const baseUrl = 'https://love4you.vercel.app'
 
   return {
     rules: {
@@ -10,5 +10,6 @@ export default function robots(): MetadataRoute.Robots {
       disallow: ['/api/'],
     },
     sitemap: `${baseUrl}/sitemap.xml`,
+    host: baseUrl,
   }
 }

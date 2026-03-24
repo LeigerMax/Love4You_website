@@ -1,4 +1,10 @@
+import type { Metadata } from 'next';
 import LegalLayout from '../components/LegalLayout';
+
+export const metadata: Metadata = {
+  title: 'Politique de Confidentialité - Love4You',
+  description: 'Découvrez notre politique de confidentialité orientée Privacy by Design et conformité RGPD. Vos données restent sur votre téléphone.',
+};
 
 export default function PrivacyPage() {
   return (

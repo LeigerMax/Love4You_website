@@ -1,6 +1,7 @@
 // app/layout.tsx
 import type { Metadata } from "next";
 import Script from "next/script";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 import MotionProvider from "./components/MotionProvider";
@@ -10,15 +11,23 @@ import ThemeProvider from "./components/ThemeProvider";
 import StarsBackground from "./components/StarsBackground";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://love4you.app'),
+  metadataBase: new URL('https://love4you.vercel.app'),
   title: "Love4You – Jeux pour couples",
   description:
     "Love4You transforme votre relation en terrain de jeu interactif : fantasmes partagés, défis quotidiens, jeux sexy et QR codes pour se connecter en toute confidentialité.",
-  keywords: ["jeux pour couples", "fantasmes", "défis couples", "jeux coquins", "relation de couple", "action vérité couple", "app couple"],
+  keywords: [
+    "jeux pour couples", "fantasmes", "défis couples", "jeux coquins", 
+    "relation de couple", "action vérité couple", "app couple",
+    "application couple", "jeu de couple", "questions pour couple",
+    "appli sexy", "améliorer son couple", "pimenter son couple",
+    "jeu hot", "vérité ou défi", "love4you", "tester son couple",
+    "quiz couple", "jeu romantique", "intimité couple", "jeux de rôle couple",
+    "défis érotiques", "boite a question couple", "kamasutra app"
+  ],
   openGraph: {
     title: "Love4You – Jeux pour couples",
     description: "Love4You transforme votre relation en terrain de jeu interactif pour explorer vos fantasmes et relever des défis.",
-    url: "https://love4you.app",
+    url: "https://love4you.vercel.app",
     siteName: "Love4You",
     locale: "fr_FR",
     type: "website",
@@ -53,6 +62,25 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning className="scroll-smooth font-[Poppins] bg-gray-50 dark:bg-[#05010a] text-gray-900 dark:text-gray-100">
       <head>
+        <meta name="google-site-verification" content="YU5YsIOQO2UfGISi4ma0b3vPniagXxM1MVfbGr5Cnnc" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Love4You",
+            "operatingSystem": "iOS, Android",
+            "applicationCategory": "LifestyleApplication",
+            "description": "Love4You transforme votre relation en terrain de jeu interactif pour explorer vos fantasmes et relever des défis.",
+            "url": "https://love4you.vercel.app",
+            "image": "https://love4you.vercel.app/icon.png",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "EUR"
+            }
+          }) }}
+        />
       </head>
       <body className="min-h-screen antialiased bg-gray-50 dark:bg-[#05010a] text-gray-900 dark:text-gray-100 transition-colors duration-300">
         <ThemeProvider attribute="class" defaultTheme="dark">
@@ -65,6 +93,7 @@ export default function RootLayout({
           </MotionProvider>
           <CookieBanner />
           <ScrollToTop />
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>

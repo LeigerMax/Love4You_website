@@ -1,4 +1,10 @@
+import type { Metadata } from 'next';
 import LegalLayout from '../components/LegalLayout';
+
+export const metadata: Metadata = {
+  title: 'Conditions d\'Utilisation - Love4You',
+  description: 'Consultez les conditions générales d\'utilisation de Love4You, l\'application de jeux et défis pour les couples.',
+};
 
 export default function TermsPage() {
   return (

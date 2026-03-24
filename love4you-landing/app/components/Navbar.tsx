@@ -9,9 +9,10 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-2 sm:gap-3">
           <Image
             src="/icon.png"
-            alt="Logo Love4You"
+            alt="Love4You - Application pour couple"
             width={80}
             height={80}
+            priority
             className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 mx-auto drop-shadow-xl"
           />
           <span className="text-xl sm:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-pink-600">
